@@ -1,0 +1,7 @@
+export enum Color {
+  MAIN_BACKGROUND = '#16172B',
+  MAIN_BLACK = '#000000',
+  MAIN_COBALT = '#00339B',
+  MAIN_CYAN = '#00CCFF',
+  MAIN_EMBER = '#FF2899',
+}
