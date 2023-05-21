@@ -1,8 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Layout, Dropdown, Menu } from 'antd';
-import { UserSwitchOutlined, LogoutOutlined, HomeOutlined } from '@ant-design/icons';
-import { Color } from '@/constants';
+import {
+  UserSwitchOutlined,
+  LogoutOutlined,
+  HomeOutlined,
+} from '@ant-design/icons';
+import { ColorConstant } from '@/constants';
 import type { ItemType } from 'antd/lib/menu/hooks/useItems';
 
 const Container = styled(Layout.Header)`
@@ -15,7 +19,11 @@ const Container = styled(Layout.Header)`
   top: 0;
   padding: 10px;
   z-index: 999;
-  background: linear-gradient(to right, ${Color.MAIN_EMBER} 0%, ${Color.MAIN_CYAN} 100%);;
+  background: linear-gradient(
+    to right,
+    ${ColorConstant.MAIN_EMBER} 0%,
+    ${ColorConstant.MAIN_CYAN} 100%
+  ); ;
 `;
 
 function Header() {
@@ -29,21 +37,10 @@ function Header() {
       label: 'Logout',
       key: 'LOGOUT',
       icon: <LogoutOutlined />,
-    }
+    },
   ];
 
-  return (
-    <Container>
-      <h1></h1>
-      <Dropdown.Button
-        overlay={<Menu items={menuItems} />}
-        overlayStyle={{ width: '150px' }}
-        icon={<UserSwitchOutlined />}
-        trigger={['click']}
-        placement='bottom'
-      />
-    </Container>
-  )
+  return <Container></Container>;
 }
 
 export default React.memo(Header);

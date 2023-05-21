@@ -3,11 +3,19 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { Layout, Menu as AntdMenu } from 'antd';
 import {
-  UserOutlined,
+  TagOutlined,
   MenuFoldOutlined,
-  BankOutlined,
-  CopyrightOutlined,
+  StarOutlined,
+  FormOutlined,
   WalletOutlined,
+  ApartmentOutlined,
+  GlobalOutlined,
+  DollarOutlined,
+  SwapOutlined,
+  CarryOutOutlined,
+  DatabaseOutlined,
+  FileSyncOutlined,
+  ShareAltOutlined,
 } from '@ant-design/icons';
 import { ItemType } from 'antd/lib/menu/hooks/useItems';
 import LOGO from '@/assets/images/LOGO.png';
@@ -41,15 +49,63 @@ function Sidebar() {
 
   const menuList: ItemType[] = useMemo(
     () => [
+      // {
+      //   key: 'asset',
+      //   icon: <WalletOutlined />,
+      //   label: 'Asset',
+      // },
+      // {
+      //   key: 'category',
+      //   icon: <ApartmentOutlined />,
+      //   label: 'Category',
+      // },
       {
-        key: 'users',
-        icon: <UserOutlined />,
-        label: 'User',
+        key: 'data',
+        icon: <DatabaseOutlined />,
+        label: 'Data',
+        children: [
+          {
+            key: 'transaction',
+            icon: <SwapOutlined />,
+            label: 'Transaction',
+          },
+          {
+            key: 'dividend',
+            icon: <ShareAltOutlined />,
+            label: 'Dividend',
+          },
+          {
+            key: 'payment',
+            icon: <DollarOutlined />,
+            label: 'Payment',
+          },
+          {
+            key: 'item',
+            icon: <TagOutlined />,
+            label: 'Item',
+          },
+          {
+            key: 'indicator',
+            icon: <GlobalOutlined />,
+            label: 'Indicator',
+          },
+        ],
       },
       {
-        key: 'wallets',
-        icon: <WalletOutlined />,
-        label: 'Wallet',
+        key: 'report',
+        icon: <FileSyncOutlined />,
+        label: 'Report',
+      },
+      {
+        key: 'event',
+        icon: <CarryOutOutlined />,
+        label: 'Event',
+      },
+
+      {
+        key: 'note',
+        icon: <FormOutlined />,
+        label: 'Note',
       },
     ],
     []

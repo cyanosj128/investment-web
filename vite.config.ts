@@ -6,7 +6,10 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 const themeVariables = lessToJS(
-  fs.readFileSync(path.resolve(__dirname, './src/config/variables.less'), 'utf8')
+  fs.readFileSync(
+    path.resolve(__dirname, './src/configs/variables.less'),
+    'utf8'
+  )
 );
 
 // https://vitejs.dev/config/
@@ -15,9 +18,9 @@ export default defineConfig({
     preprocessorOptions: {
       less: {
         modifyVars: themeVariables,
-        javascriptEnabled: true
-      }
-    }
+        javascriptEnabled: true,
+      },
+    },
   },
   resolve: {
     alias: [
@@ -26,7 +29,7 @@ export default defineConfig({
     ],
   },
   esbuild: {
-    logOverride: { 'this-is-undefined-in-esm': 'silent' }
+    logOverride: { 'this-is-undefined-in-esm': 'silent' },
   },
   plugins: [
     react(),
@@ -38,5 +41,5 @@ export default defineConfig({
         },
       ],
     }),
-  ]
+  ],
 });
